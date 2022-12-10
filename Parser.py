@@ -11,7 +11,7 @@ class download_post():
 
     def download__posts(self,username):
         posts = instaloader.Profile.from_username(self.L.context, username).get_posts()
-        SINCE = datetime(2011, 8, 28)               #період
+        SINCE = datetime(2011, 8, 28)               
         UNTIL = datetime(2022, 11, 7)
 
         for post in takewhile(lambda p: p.date > SINCE, dropwhile(lambda p: p.date > UNTIL, posts)):
